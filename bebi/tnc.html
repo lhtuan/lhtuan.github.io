@@ -5,84 +5,211 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms &amp; Conditions - Bebi</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: #333;
+            line-height: 1.6;
+            background: #fafafa;
+        }
+
+        nav {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        nav .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #E891AC;
+            text-decoration: none;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        nav .nav-links a:hover { color: #E891AC; }
+        nav .nav-links a.active { color: #E891AC; }
+
+        .page-header {
+            background: linear-gradient(135deg, #FFB5C8 0%, #B5D4FF 100%);
+            padding: 48px 24px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .page-header .updated {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-top: 8px;
+        }
+
+        .content {
             max-width: 720px;
             margin: 0 auto;
-            padding: 16px;
-            background: #fff;
+            padding: 40px 24px 64px;
         }
-        h1 { font-size: 1.5em; color: #1a1a1a; }
-        h2 { font-size: 1.15em; color: #1a1a1a; margin-top: 1.5em; }
-        p, li { font-size: 0.95em; }
-        ul { padding-left: 1.2em; }
-        .updated { color: #666; font-size: 0.85em; }
+
+        .content h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #222;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        .content p, .content li {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .content p { margin-bottom: 0.8em; }
+
+        .content ul, .content ol {
+            padding-left: 1.4em;
+            margin-bottom: 0.8em;
+        }
+
+        .content li { margin-bottom: 0.4em; }
+
+        .content a {
+            color: #E891AC;
+            text-decoration: none;
+        }
+
+        .content a:hover { text-decoration: underline; }
+
+        .content strong { color: #333; }
+
+        footer {
+            background: #222;
+            color: #999;
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 0.9rem;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 12px;
+        }
+
+        footer .footer-links a {
+            color: #B5D4FF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer .footer-links a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-<h1>Terms &amp; Conditions</h1>
-<p class="updated">Last updated: April 16, 2026</p>
 
-<p>Please read these Terms &amp; Conditions ("Terms") carefully before using the Bebi app ("the App") operated by TLTek ("we", "us", or "our").</p>
+<nav>
+    <a class="logo" href="index.html">Bebi</a>
+    <div class="nav-links">
+        <a href="tnc.html" class="active">Terms</a>
+        <a href="privacy.html">Privacy</a>
+    </div>
+</nav>
 
-<h2>1. Acceptance of Terms</h2>
-<p>By creating an account or using the App, you agree to be bound by these Terms. If you do not agree, please do not use the App. You must be at least 13 years old (or the minimum age required in your country) to use the App.</p>
+<div class="page-header">
+    <h1>Terms &amp; Conditions</h1>
+    <p class="updated">Last updated: April 16, 2026</p>
+</div>
 
-<h2>2. Description of Service</h2>
-<p>Bebi is a baby activity tracking application that allows parents and caregivers to log and monitor feeding, diaper changes, sleep patterns, and other baby-related activities. The App provides daily statistics, insights, and reports based on the data you enter.</p>
+<div class="content">
+    <p>Please read these Terms &amp; Conditions ("Terms") carefully before using the Bebi app ("the App") operated by TLTek ("we", "us", or "our").</p>
 
-<h2>3. Account Registration</h2>
-<ul>
-    <li>You must provide a valid email address to create an account.</li>
-    <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
-    <li>You are responsible for all activities that occur under your account.</li>
-    <li>You must notify us immediately of any unauthorized use of your account.</li>
-</ul>
+    <h2>1. Acceptance of Terms</h2>
+    <p>By creating an account or using the App, you agree to be bound by these Terms. If you do not agree, please do not use the App. You must be at least 13 years old (or the minimum age required in your country) to use the App.</p>
 
-<h2>4. User Responsibilities</h2>
-<ul>
-    <li>You agree to provide accurate information when using the App.</li>
-    <li>You agree not to use the App for any unlawful purpose.</li>
-    <li>You agree not to attempt to reverse engineer, modify, or tamper with the App.</li>
-    <li>You agree not to use automated systems or bots to access the App.</li>
-</ul>
+    <h2>2. Description of Service</h2>
+    <p>Bebi is a baby activity tracking application that allows parents and caregivers to log and monitor feeding, diaper changes, sleep patterns, and other baby-related activities. The App provides daily statistics, insights, and reports based on the data you enter.</p>
 
-<h2>5. Medical Disclaimer</h2>
-<p><strong>The App is not a medical device and does not provide medical advice.</strong> The insights, statistics, and reports generated by the App are for informational purposes only and should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for any concerns about your baby's health.</p>
+    <h2>3. Account Registration</h2>
+    <ul>
+        <li>You must provide a valid email address to create an account.</li>
+        <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+        <li>You are responsible for all activities that occur under your account.</li>
+        <li>You must notify us immediately of any unauthorized use of your account.</li>
+    </ul>
 
-<h2>6. Intellectual Property</h2>
-<p>The App, including its design, code, graphics, and content, is owned by TLTek and is protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works based on the App without our written consent.</p>
+    <h2>4. User Responsibilities</h2>
+    <ul>
+        <li>You agree to provide accurate information when using the App.</li>
+        <li>You agree not to use the App for any unlawful purpose.</li>
+        <li>You agree not to attempt to reverse engineer, modify, or tamper with the App.</li>
+        <li>You agree not to use automated systems or bots to access the App.</li>
+    </ul>
 
-<h2>7. Data and Content</h2>
-<ul>
-    <li>You retain ownership of the data you enter into the App.</li>
-    <li>You grant us a limited license to store and process your data solely to provide the App's services.</li>
-    <li>We handle your data in accordance with our <a href="privacy.html">Privacy Policy</a>.</li>
-</ul>
+    <h2>5. Medical Disclaimer</h2>
+    <p><strong>The App is not a medical device and does not provide medical advice.</strong> The insights, statistics, and reports generated by the App are for informational purposes only and should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for any concerns about your baby's health.</p>
 
-<h2>8. Service Availability</h2>
-<p>We strive to keep the App available at all times but do not guarantee uninterrupted access. We may temporarily suspend the App for maintenance, updates, or circumstances beyond our control. We are not liable for any loss resulting from service interruptions.</p>
+    <h2>6. Intellectual Property</h2>
+    <p>The App, including its design, code, graphics, and content, is owned by TLTek and is protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works based on the App without our written consent.</p>
 
-<h2>9. Termination</h2>
-<ul>
-    <li>You may delete your account at any time from the Settings screen.</li>
-    <li>We may suspend or terminate your account if you violate these Terms.</li>
-    <li>Upon termination, your data will be deleted in accordance with our Privacy Policy.</li>
-</ul>
+    <h2>7. Data and Content</h2>
+    <ul>
+        <li>You retain ownership of the data you enter into the App.</li>
+        <li>You grant us a limited license to store and process your data solely to provide the App's services.</li>
+        <li>We handle your data in accordance with our <a href="privacy.html">Privacy Policy</a>.</li>
+    </ul>
 
-<h2>10. Limitation of Liability</h2>
-<p>To the maximum extent permitted by law, TLTek shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App. Our total liability shall not exceed the amount you paid for the App (if any).</p>
+    <h2>8. Service Availability</h2>
+    <p>We strive to keep the App available at all times but do not guarantee uninterrupted access. We may temporarily suspend the App for maintenance, updates, or circumstances beyond our control. We are not liable for any loss resulting from service interruptions.</p>
 
-<h2>11. Changes to These Terms</h2>
-<p>We may update these Terms from time to time. Continued use of the App after changes constitutes acceptance of the revised Terms. We will notify you of significant changes through the App.</p>
+    <h2>9. Termination</h2>
+    <ul>
+        <li>You may delete your account at any time from the Settings screen.</li>
+        <li>We may suspend or terminate your account if you violate these Terms.</li>
+        <li>Upon termination, your data will be deleted in accordance with our Privacy Policy.</li>
+    </ul>
 
-<h2>12. Governing Law</h2>
-<p>These Terms are governed by and construed in accordance with the laws of Vietnam, without regard to conflict of law provisions.</p>
+    <h2>10. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, TLTek shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App. Our total liability shall not exceed the amount you paid for the App (if any).</p>
 
-<h2>13. Contact Us</h2>
-<p>If you have questions about these Terms, please contact us at:</p>
-<p><strong>Email:</strong>tl.tek5392@gmail.com</p>
+    <h2>11. Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. Continued use of the App after changes constitutes acceptance of the revised Terms. We will notify you of significant changes through the App.</p>
+
+    <h2>12. Governing Law</h2>
+    <p>These Terms are governed by and construed in accordance with the laws of Vietnam, without regard to conflict of law provisions.</p>
+
+    <h2>13. Contact Us</h2>
+    <p>If you have questions about these Terms, please contact us at:</p>
+    <p><strong>Email:</strong> support@tltek.com</p>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="tnc.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <p>&copy; 2025 TLTek. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
