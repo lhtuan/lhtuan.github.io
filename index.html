@@ -203,8 +203,83 @@
       font-weight: 500;
     }
 
+    /* Experience */
+    #experience { background: #fff; }
+
+    .timeline {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 28px;
+      padding-bottom: 36px;
+      border-left: 2px solid #e5e7eb;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #4F46E5;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px #4F46E5;
+    }
+
+    .timeline-item .date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #4F46E5;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.15rem;
+      color: #222;
+      margin-bottom: 2px;
+    }
+
+    .timeline-item .company {
+      font-size: 0.95rem;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .timeline-item .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .timeline-item .tech-tags span {
+      background: #f3f4f6;
+      color: #555;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
     /* Apps */
-    #apps { background: #fff; }
+    #apps { background: #fafafa; }
 
     .apps-grid {
       display: grid;
@@ -380,6 +455,7 @@
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
       <a href="#apps">Apps</a>
       <a href="#contact">Contact</a>
     </div>
@@ -389,7 +465,7 @@
 <header class="hero">
   <img class="avatar" src="avatar.jpeg" alt="Tuan Le">
   <h1>Tuan Le</h1>
-  <p class="tagline">Android Developer based in Vietnam</p>
+  <p class="tagline">Senior Android Developer · 10+ years of experience</p>
   <div class="links">
     <a href="https://github.com/lhtuan" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/tuan-le-0a79b0b8" target="_blank">LinkedIn</a>
@@ -402,9 +478,10 @@
     <h2>About Me <span></span></h2>
     <div class="about-content">
       <p>
-        I'm an Android developer with a passion for building clean, user-friendly mobile applications.
-        I specialize in Kotlin, Jetpack Compose, and modern Android architecture.
-        I enjoy turning ideas into polished apps that solve real everyday problems — from parenting to staying informed.
+        I'm a mobile developer based in Ho Chi Minh City, Vietnam, with over 10 years of experience
+        building Android applications using Java, Kotlin, and Flutter. I specialize in clean architecture,
+        MVVM patterns, and modern Android tooling. I enjoy turning ideas into polished apps that solve
+        real everyday problems — from parenting to weather forecasting.
       </p>
     </div>
   </div>
@@ -463,6 +540,52 @@
         <div class="tags">
           <span>GitLab CI</span>
           <span>GitHub Actions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <h2>Work Experience <span></span></h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="date">Feb 2020 – Present</div>
+        <h3>Senior Android Developer</h3>
+        <div class="company">Buuuk Pte. Ltd — Singapore (Remote)</div>
+        <p>Building and maintaining native Android and Flutter apps for clients across Southeast Asia using Agile methodology. Work includes weather & alert systems, e-commerce apps with payment integration, and banking applications.</p>
+        <div class="tech-tags">
+          <span>Kotlin</span>
+          <span>Flutter</span>
+          <span>MVVM</span>
+          <span>Jetpack</span>
+          <span>Firebase</span>
+          <span>BLoC</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="date">Mar 2018 – Feb 2020</div>
+        <h3>Senior Android Developer</h3>
+        <div class="company">Cloud 9 Solutions Pte. Ltd — Vietnam</div>
+        <p>Developed location-based Android applications for a Japanese client, leveraging BLE connectivity, map technologies, and real-time tracking features.</p>
+        <div class="tech-tags">
+          <span>Java</span>
+          <span>MVC</span>
+          <span>SQLite</span>
+          <span>BLE</span>
+          <span>Firebase</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="date">Feb 2014 – Dec 2017</div>
+        <h3>Junior Android Developer</h3>
+        <div class="company">Tripod Technology GmbH — Germany (Remote)</div>
+        <p>Built a language learning app and an audio recording app with custom sound visualization and format conversion features.</p>
+        <div class="tech-tags">
+          <span>Java</span>
+          <span>Volley</span>
+          <span>Custom UI</span>
         </div>
       </div>
     </div>
