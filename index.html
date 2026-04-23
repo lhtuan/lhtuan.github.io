@@ -2,67 +2,547 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tuan Le – Android Developer</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #333;
       line-height: 1.6;
+      background: #fafafa;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+      z-index: 100;
+      padding: 16px 24px;
+    }
+
+    nav .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
       color: #222;
+      text-decoration: none;
     }
-    h1, h2 {
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 4px;
+
+    nav .nav-links {
+      display: flex;
+      gap: 24px;
     }
-    ul {
-      padding-left: 20px;
+
+    nav .nav-links a {
+      color: #555;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
     }
-    .section {
+
+    nav .nav-links a:hover { color: #4F46E5; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #EC4899 100%);
+      padding: 140px 24px 80px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      border: 3px solid rgba(255,255,255,0.4);
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hero .tagline {
+      font-size: 1.25rem;
+      opacity: 0.9;
       margin-bottom: 24px;
+    }
+
+    .hero .links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero .links a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 24px;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .hero .links a:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: #fff;
+    }
+
+    /* Sections */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    section h2 span {
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #4F46E5, #EC4899);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* About */
+    .about-content {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .skill-card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
+      color: #222;
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .skill-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .skill-card .tags span {
+      background: #f3f4f6;
+      color: #555;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Apps */
+    #apps { background: #fff; }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .app-card {
+      background: #fafafa;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #eee;
+    }
+
+    .app-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+
+    .app-header {
+      padding: 32px 24px 24px;
+      text-align: center;
+    }
+
+    .app-header .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .app-header h3 {
+      font-size: 1.25rem;
+      color: #222;
+      margin-bottom: 8px;
+    }
+
+    .app-header p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .app-body {
+      padding: 0 24px 24px;
+    }
+
+    .app-body .features-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .app-body .features-list li {
+      padding: 6px 0;
+      font-size: 0.88rem;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .app-body .features-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .app-links {
+      padding: 16px 24px;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .app-links a {
+      font-size: 0.85rem;
+      color: #4F46E5;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid #e0e0e0;
+      transition: all 0.2s;
+    }
+
+    .app-links a:hover {
+      background: #4F46E5;
+      color: #fff;
+      border-color: #4F46E5;
+    }
+
+    /* Color variants */
+    .pink .app-icon { background: linear-gradient(135deg, #FFB5C8, #E891AC); }
+    .pink .features-list li::before { background: #E891AC; }
+
+    .blue .app-icon { background: linear-gradient(135deg, #93C5FD, #3B82F6); }
+    .blue .features-list li::before { background: #3B82F6; }
+
+    .green .app-icon { background: linear-gradient(135deg, #86EFAC, #22C55E); }
+    .green .features-list li::before { background: #22C55E; }
+
+    /* Contact */
+    #contact {
+      background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+      color: #fff;
+      text-align: center;
+    }
+
+    #contact h2 { color: #fff; }
+    #contact h2 span { background: rgba(255,255,255,0.4); }
+
+    #contact p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 24px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 28px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .contact-links a:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #888;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .hero .tagline { font-size: 1rem; }
+      section { padding: 48px 0; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .apps-grid { grid-template-columns: 1fr; }
+      nav .nav-links { gap: 16px; }
+      nav .nav-links a { font-size: 0.8rem; }
     }
   </style>
 </head>
 <body>
 
-<h1>Tuan Le</h1>
-<p><strong>Android Developer</strong></p>
-<p>
-  📍 Vietnam ·
-  <a href="https://github.com/lhtuan">GitHub</a> ·
-  <a href="www.linkedin.com/in/tuan-le-0a79b0b8">LinkedIn</a>
-</p>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#">TuanLe</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#apps">Apps</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
 
-<div class="section">
-  <h2>Summary</h2>
-  <p>
-    Android developer with experience in Kotlin, Jetpack Compose,
-    Firebase, and modern Android architecture.
-  </p>
-</div>
+<header class="hero">
+  <div class="avatar">TL</div>
+  <h1>Tuan Le</h1>
+  <p class="tagline">Android Developer based in Vietnam</p>
+  <div class="links">
+    <a href="https://github.com/lhtuan" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/tuan-le-0a79b0b8" target="_blank">LinkedIn</a>
+    <a href="mailto:tl.tek5392@gmail.com">Email</a>
+  </div>
+</header>
 
-<div class="section">
-  <h2>Skills</h2>
-  <ul>
-    <li>Kotlin, Jetpack Compose</li>
-    <li>Firebase (Auth, Firestore)</li>
-    <li>Hilt, MVVM, Clean Architecture</li>
-    <li>Git, CI/CD</li>
-  </ul>
-</div>
+<section id="about">
+  <div class="container">
+    <h2>About Me <span></span></h2>
+    <div class="about-content">
+      <p>
+        I'm an Android developer with a passion for building clean, user-friendly mobile applications.
+        I specialize in Kotlin, Jetpack Compose, and modern Android architecture.
+        I enjoy turning ideas into polished apps that solve real everyday problems — from parenting to staying informed.
+      </p>
+    </div>
+  </div>
+</section>
 
-<div class="section">
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>GainTrack</strong> – Fitness tracking app using Compose & Firebase</li>
-  </ul>
-</div>
+<section id="skills">
+  <div class="container">
+    <h2>Skills <span></span></h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="icon" style="background: #EEF2FF; color: #4F46E5;">&#9888;</div>
+        <h3>Android Development</h3>
+        <p>Building native Android apps with modern tools and best practices.</p>
+        <div class="tags">
+          <span>Kotlin</span>
+          <span>Jetpack Compose</span>
+          <span>XML Layouts</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="icon" style="background: #FFF7ED; color: #EA580C;">&#9881;</div>
+        <h3>Architecture & Patterns</h3>
+        <p>Writing maintainable and testable code with clean architecture.</p>
+        <div class="tags">
+          <span>MVVM</span>
+          <span>Clean Architecture</span>
+          <span>Hilt / DI</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="icon" style="background: #FDF2F8; color: #DB2777;">&#9729;</div>
+        <h3>Backend & Services</h3>
+        <p>Integrating cloud services for authentication, storage, and real-time data.</p>
+        <div class="tags">
+          <span>Firebase</span>
+          <span>Firestore</span>
+          <span>REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="icon" style="background: #F0FDF4; color: #16A34A;">&#9875;</div>
+        <h3>Tools & Workflow</h3>
+        <p>Shipping apps efficiently with solid development workflows.</p>
+        <div class="tags">
+          <span>Git</span>
+          <span>CI/CD</span>
+          <span>Google Play</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="section">
-  <h2>Education</h2>
-  <p>Bachelor of Computer Science</p>
-</div>
+<section id="apps">
+  <div class="container">
+    <h2>My Apps <span></span></h2>
+    <div class="apps-grid">
+
+      <div class="app-card pink">
+        <div class="app-header">
+          <img class="app-icon" src="bebi/ic_launcher-playstore.png" alt="Bebi icon" style="border-radius:16px;width:64px;height:64px;">
+          <h3>Bebi</h3>
+          <p>Smart baby tracking for new parents</p>
+        </div>
+        <div class="app-body">
+          <ul class="features-list">
+            <li>Log feeding, sleep & diaper changes</li>
+            <li>Daily statistics & trend analysis</li>
+            <li>Home screen widget</li>
+            <li>Growth tracking & reminders</li>
+            <li>Cloud sync across devices</li>
+          </ul>
+        </div>
+        <div class="app-links">
+          <a href="https://play.google.com/store/apps/details?id=com.tltek.bebi" target="_blank">Google Play</a>
+          <a href="bebi/">Learn More</a>
+        </div>
+      </div>
+
+      <div class="app-card blue">
+        <div class="app-header">
+          <div class="app-icon">&#9925;</div>
+          <h3>SG Weather</h3>
+          <p>Simple and accurate weather forecasts</p>
+        </div>
+        <div class="app-body">
+          <ul class="features-list">
+            <li>Real-time weather updates</li>
+            <li>Clean and minimal interface</li>
+            <li>Daily & hourly forecasts</li>
+          </ul>
+        </div>
+        <div class="app-links">
+          <a href="sgweather/">Privacy & Terms</a>
+        </div>
+      </div>
+
+      <div class="app-card green">
+        <div class="app-header">
+          <div class="app-icon">&#128240;</div>
+          <h3>Bao Tong Hop</h3>
+          <p>Vietnamese news aggregator</p>
+        </div>
+        <div class="app-body">
+          <ul class="features-list">
+            <li>Aggregate news from multiple sources</li>
+            <li>Fast and lightweight reading</li>
+            <li>Free to use</li>
+          </ul>
+        </div>
+        <div class="app-links">
+          <a href="baotonghop/">Privacy & Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Get In Touch <span></span></h2>
+    <p>Interested in working together or have a question about one of my apps?</p>
+    <div class="contact-links">
+      <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>
+      <a href="https://github.com/lhtuan" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/tuan-le-0a79b0b8" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Tuan Le. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
