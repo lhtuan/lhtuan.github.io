@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a2542"/><stop offset="1" stop-color="#0f1a2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg4)"/>
+  <circle cx="1100" cy="100" r="400" fill="#10b981" opacity=".08"/>
+
+  <text x="540" y="180" font-family="-apple-system, Inter, sans-serif" font-size="76" font-weight="800" letter-spacing="-2" fill="#fff" text-anchor="middle">See where it</text>
+  <text x="540" y="270" font-family="-apple-system, Inter, sans-serif" font-size="76" font-weight="800" letter-spacing="-2" fill="#7ee5b9" text-anchor="middle">all went.</text>
+  <text x="540" y="330" font-family="-apple-system, Inter, sans-serif" font-size="32" font-weight="400" fill="#a0adc5" text-anchor="middle">Monthly breakdown at a glance</text>
+
+  <g transform="translate(240 420)">
+    <rect width="600" height="1280" rx="76" fill="#0a0f1a"/>
+    <rect x="22" y="22" width="556" height="1236" rx="56" fill="#f7f8fb"/>
+
+    <!-- Month picker -->
+    <text x="300" y="120" font-family="-apple-system, sans-serif" font-size="36" font-weight="700" fill="#0d1424" text-anchor="middle">‹    May 2026    ›</text>
+
+    <!-- Top stats -->
+    <g transform="translate(40 160)">
+      <rect width="160" height="100" rx="22" fill="#fff" stroke="#e7eaf0" stroke-width="2"/>
+      <text x="80" y="44" font-family="-apple-system, sans-serif" font-size="16" fill="#6b7689" letter-spacing="1" text-anchor="middle">SPENT</text>
+      <text x="80" y="80" font-family="-apple-system, sans-serif" font-size="30" font-weight="700" fill="#ef4444" text-anchor="middle">8.42M</text>
+
+      <rect x="180" width="160" height="100" rx="22" fill="#fff" stroke="#e7eaf0" stroke-width="2"/>
+      <text x="260" y="44" font-family="-apple-system, sans-serif" font-size="16" fill="#6b7689" letter-spacing="1" text-anchor="middle">INCOME</text>
+      <text x="260" y="80" font-family="-apple-system, sans-serif" font-size="30" font-weight="700" fill="#16a34a" text-anchor="middle">15M</text>
+
+      <rect x="360" width="160" height="100" rx="22" fill="#fff" stroke="#e7eaf0" stroke-width="2"/>
+      <text x="440" y="44" font-family="-apple-system, sans-serif" font-size="16" fill="#6b7689" letter-spacing="1" text-anchor="middle">NET</text>
+      <text x="440" y="80" font-family="-apple-system, sans-serif" font-size="30" font-weight="700" fill="#0d1424" text-anchor="middle">+6.58M</text>
+    </g>
+
+    <!-- Donut chart -->
+    <g transform="translate(300 470)">
+      <circle r="180" fill="none" stroke="#e7eaf0" stroke-width="64"/>
+      <circle r="180" fill="none" stroke="#10b981" stroke-width="64" stroke-dasharray="316 1130" stroke-dashoffset="0" transform="rotate(-90)"/>
+      <circle r="180" fill="none" stroke="#3b82f6" stroke-width="64" stroke-dasharray="248 1130" stroke-dashoffset="-316" transform="rotate(-90)"/>
+      <circle r="180" fill="none" stroke="#f59e0b" stroke-width="64" stroke-dasharray="203 1130" stroke-dashoffset="-564" transform="rotate(-90)"/>
+      <circle r="180" fill="none" stroke="#ec4899" stroke-width="64" stroke-dasharray="158 1130" stroke-dashoffset="-767" transform="rotate(-90)"/>
+      <circle r="180" fill="none" stroke="#8b5cf6" stroke-width="64" stroke-dasharray="113 1130" stroke-dashoffset="-925" transform="rotate(-90)"/>
+      <text y="-10" font-family="-apple-system, sans-serif" font-size="20" fill="#6b7689" text-anchor="middle" letter-spacing="2">TOTAL SPENT</text>
+      <text y="40" font-family="-apple-system, sans-serif" font-size="54" font-weight="700" fill="#0d1424" text-anchor="middle">8.42M</text>
+    </g>
+
+    <!-- Category list -->
+    <g transform="translate(40 860)" font-family="-apple-system, sans-serif">
+      <g transform="translate(0 0)">
+        <circle cx="32" cy="32" r="28" fill="#10b981"/>
+        <text x="32" y="42" font-size="26" text-anchor="middle">☕</text>
+        <text x="80" y="30" font-size="26" font-weight="600" fill="#0d1424">Coffee</text>
+        <text x="80" y="58" font-size="18" fill="#6b7689">28%</text>
+        <text x="510" y="44" font-size="26" font-weight="700" fill="#0d1424" text-anchor="end">2.36M</text>
+      </g>
+      <line x1="20" y1="82" x2="510" y2="82" stroke="#e7eaf0"/>
+      <g transform="translate(0 100)">
+        <circle cx="32" cy="32" r="28" fill="#3b82f6"/>
+        <text x="32" y="42" font-size="26" text-anchor="middle">🍜</text>
+        <text x="80" y="30" font-size="26" font-weight="600" fill="#0d1424">Food</text>
+        <text x="80" y="58" font-size="18" fill="#6b7689">22%</text>
+        <text x="510" y="44" font-size="26" font-weight="700" fill="#0d1424" text-anchor="end">1.85M</text>
+      </g>
+      <line x1="20" y1="182" x2="510" y2="182" stroke="#e7eaf0"/>
+      <g transform="translate(0 200)">
+        <circle cx="32" cy="32" r="28" fill="#f59e0b"/>
+        <text x="32" y="42" font-size="26" text-anchor="middle">🚖</text>
+        <text x="80" y="30" font-size="26" font-weight="600" fill="#0d1424">Transport</text>
+        <text x="80" y="58" font-size="18" fill="#6b7689">18%</text>
+        <text x="510" y="44" font-size="26" font-weight="700" fill="#0d1424" text-anchor="end">1.52M</text>
+      </g>
+      <line x1="20" y1="282" x2="510" y2="282" stroke="#e7eaf0"/>
+      <g transform="translate(0 300)">
+        <circle cx="32" cy="32" r="28" fill="#ec4899"/>
+        <text x="32" y="42" font-size="26" text-anchor="middle">🛍️</text>
+        <text x="80" y="30" font-size="26" font-weight="600" fill="#0d1424">Shopping</text>
+        <text x="80" y="58" font-size="18" fill="#6b7689">14%</text>
+        <text x="510" y="44" font-size="26" font-weight="700" fill="#0d1424" text-anchor="end">1.18M</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="540" y="1820" font-family="-apple-system, sans-serif" font-size="28" font-weight="600" fill="#7ee5b9" text-anchor="middle">📊 Swipe between months · zero setup required</text>
+</svg>

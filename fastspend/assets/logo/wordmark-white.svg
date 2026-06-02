@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="480" height="120">
+  <!-- Monogram tile in white outline for dark backgrounds -->
+  <rect x="8" y="20" width="80" height="80" rx="18" fill="#ffffff"/>
+  <path d="M30 36 L75 36 L75 47 L43 47 L43 56 L66 56 L66 67 L43 67 L43 84 L30 84 Z"
+        fill="#10b981"/>
+  <path d="M76 48 L86 48 L81 58 L86 58 L73 75 L78 64 L73 64 Z"
+        fill="#10b981" opacity="0.95"/>
+  <text x="108" y="80" font-family="-apple-system, BlinkMacSystemFont, Inter, Roboto, sans-serif"
+        font-size="56" font-weight="700" letter-spacing="-1.5" fill="#ffffff">Fast<tspan fill="#7ee5b9">Spend</tspan></text>
+</svg>
