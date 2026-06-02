@@ -9,168 +9,256 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>FastSpend — Privacy Policy</title>
+<meta name="description" content="How FastSpend handles your data. Local-first by default, no ads, no analytics, optional encrypted cloud backup." />
+<link rel="icon" type="image/svg+xml" href="../assets/logo/monogram.svg" />
 <style>
-  :root { --fg:#1a1a2e; --muted:#5b6072; --accent:#3b5bdb; --line:#e6e8ef; --bg:#ffffff; }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.65; font-size: 17px;
+  :root {
+    --green-1:#13c895; --green-2:#0a8f6b;
+    --navy-1:#0f1a2e; --navy-2:#1a2542;
+    --ink:#16203a; --muted:#5b6072; --line:#e6e8ef;
+    --bg:#ffffff; --soft:#f6f8fc;
   }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 96px; }
-  header { border-bottom: 1px solid var(--line); padding-bottom: 22px; margin-bottom: 8px; }
-  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 6px; }
-  h2 { font-size: 21px; margin: 40px 0 10px; }
-  h3 { font-size: 17px; margin: 24px 0 6px; }
-  p, li { color: var(--fg); }
-  .muted { color: var(--muted); font-size: 14px; margin: 4px 0 0; }
-  a { color: var(--accent); }
-  ul { padding-left: 22px; }
-  li { margin: 6px 0; }
-  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15px; }
-  th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
-  th { background: #f6f7fb; }
-  code { background: #f1f3f9; padding: 1px 6px; border-radius: 5px; font-size: 14px; }
-  .note { background: #f6f7fb; border-left: 3px solid var(--accent); padding: 12px 16px; border-radius: 6px; margin: 18px 0; font-size: 15px; }
-  footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65; font-size:17px; -webkit-font-smoothing:antialiased;
+  }
+  a { color:var(--green-2); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+
+  /* Nav (matches landing page) */
+  nav {
+    position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(12px);
+    background:rgba(15,26,46,.82); border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  nav .wrap { display:flex; align-items:center; justify-content:space-between; height:64px; }
+  nav img { height:30px; display:block; }
+  nav .links a { color:rgba(255,255,255,.85); font-size:15px; margin-left:26px; font-weight:500; }
+  nav .links a:hover { color:#fff; text-decoration:none; }
+  .btn { display:inline-block; font-weight:600; border-radius:999px; transition:transform .15s ease; }
+  .btn:hover { transform:translateY(-2px); text-decoration:none; }
+  .btn-primary { background:linear-gradient(135deg,var(--green-1),var(--green-2)); color:#fff; }
+  @media (max-width:640px){ nav .links a:not(.btn){ display:none; } }
+
+  /* Dark page header */
+  .page-hero {
+    background:
+      radial-gradient(700px 300px at 88% -40%, rgba(19,200,149,.18), transparent 60%),
+      linear-gradient(160deg,var(--navy-1),var(--navy-2));
+    color:#fff; padding:60px 0 54px;
+  }
+  .page-hero .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; font-weight:700; color:#3ee3b4; }
+  .page-hero h1 { font-size:40px; line-height:1.1; margin:12px 0 10px; letter-spacing:-.02em; }
+  .page-hero .meta { color:rgba(255,255,255,.62); font-size:14px; margin:0; }
+  .page-hero .meta code { background:rgba(255,255,255,.10); color:#cfe9df; padding:1px 7px; border-radius:5px; font-size:13px; }
+
+  /* Document body */
+  .doc { max-width:780px; margin:0 auto; padding:54px 22px 80px; }
+  .doc h2 { font-size:23px; margin:42px 0 10px; letter-spacing:-.01em; }
+  .doc h3 { font-size:18px; margin:26px 0 6px; }
+  .doc p, .doc li { color:var(--ink); }
+  .doc .muted { color:var(--muted); font-size:14px; margin:4px 0 0; }
+  .doc ul { padding-left:22px; }
+  .doc li { margin:6px 0; }
+  .doc code { background:#eef1f8; padding:1px 6px; border-radius:5px; font-size:14px; }
+  table { border-collapse:collapse; width:100%; margin:16px 0; font-size:15px; }
+  th, td { border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+  th { background:var(--soft); }
+  .note { background:var(--soft); border-left:3px solid var(--green-1); padding:14px 18px; border-radius:10px; margin:20px 0; font-size:15px; }
+
+  /* Footer (matches landing page) */
+  footer { background:#0b1322; color:rgba(255,255,255,.7); padding:50px 0 38px; font-size:15px; }
+  footer .top { display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap; }
+  footer img { height:30px; }
+  footer .cols { display:flex; gap:54px; flex-wrap:wrap; }
+  footer h5 { color:#fff; font-size:14px; text-transform:uppercase; letter-spacing:.08em; margin:0 0 12px; }
+  footer a { display:block; color:rgba(255,255,255,.7); margin:7px 0; }
+  footer a:hover { color:var(--green-1); text-decoration:none; }
+  footer .legal { border-top:1px solid rgba(255,255,255,.08); margin-top:36px; padding-top:22px; font-size:13px; color:rgba(255,255,255,.5); }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>Privacy Policy</h1>
-    <p class="muted">FastSpend (<code>com.tltek.fastspend</code>)</p>
-    <p class="muted">Last updated: 2 June 2026 &middot; Effective: 2 June 2026</p>
+
+  <nav>
+    <div class="wrap">
+      <a href="../index.html"><img src="../assets/logo/wordmark-white.svg" alt="FastSpend" /></a>
+      <div class="links">
+        <a href="../index.html#features">Features</a>
+        <a href="../index.html#plus">Plus</a>
+        <a href="terms-and-conditions.html">Terms</a>
+        <a href="../index.html#get" class="btn btn-primary" style="padding:9px 18px; font-size:14px;">Get the app</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p class="meta">FastSpend (<code>com.tltek.fastspend</code>) &middot; Last updated 2 June 2026 &middot; Effective 2 June 2026</p>
+    </div>
   </header>
 
-  <p>This Privacy Policy explains how <strong>TLTek</strong> ("we", "us", "our") handles
-  information in connection with the <strong>FastSpend</strong> mobile application (the "App").
-  FastSpend is an expense-tracking app designed to be <strong>local-first</strong>: by default,
-  the financial data you enter stays on your device. Some optional features described below
-  involve sending data to cloud services.</p>
+  <main class="doc">
+    <p>This Privacy Policy explains how <strong>TLTek</strong> ("we", "us", "our") handles
+    information in connection with the <strong>FastSpend</strong> mobile application (the "App").
+    FastSpend is an expense-tracking app designed to be <strong>local-first</strong>: by default,
+    the financial data you enter stays on your device. Some optional features described below
+    involve sending data to cloud services.</p>
 
-  <div class="note">
-    <strong>Summary.</strong> Your expenses, categories, and budgets are stored on your device.
-    We do not run advertising and do not use analytics or crash-reporting SDKs. If you choose to
-    enable the optional Cloud Backup feature, your data is synced to your private Google&nbsp;Firebase
-    account and is accessible only to you.
-  </div>
+    <div class="note">
+      <strong>Summary.</strong> Your expenses, categories, and budgets are stored on your device.
+      We do not run advertising and do not use analytics or crash-reporting SDKs. If you choose to
+      enable the optional Cloud Backup feature, your data is synced to your private Google&nbsp;Firebase
+      account and is accessible only to you.
+    </div>
 
-  <h2>1. Who we are</h2>
-  <p>The App is provided by TLTek. For any privacy question or request, contact us at
-  <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>.</p>
-  <p class="muted">Data controller (legal entity): [YOUR LEGAL ENTITY NAME], [REGISTERED ADDRESS].</p>
+    <h2>1. Who we are</h2>
+    <p>The App is provided by TLTek. For any privacy question or request, contact us at
+    <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>.</p>
+    <p class="muted">Data controller (legal entity): [YOUR LEGAL ENTITY NAME], [REGISTERED ADDRESS].</p>
 
-  <h2>2. Information we process</h2>
+    <h2>2. Information we process</h2>
 
-  <h3>2.1 Data you create in the App (stored on your device)</h3>
-  <ul>
-    <li><strong>Transactions</strong> — amounts, currency, category, optional notes, and date/time.</li>
-    <li><strong>Categories</strong> — names, icons, colors, and ordering.</li>
-    <li><strong>Budgets</strong> — monthly limits per category.</li>
-    <li><strong>Preferences</strong> — currency, language, and similar settings.</li>
-  </ul>
-  <p>By default this data is stored only in a local database on your device and is not transmitted
-  to us or to any third party.</p>
+    <h3>2.1 Data you create in the App (stored on your device)</h3>
+    <ul>
+      <li><strong>Transactions</strong> — amounts, currency, category, optional notes, and date/time.</li>
+      <li><strong>Categories</strong> — names, icons, colors, and ordering.</li>
+      <li><strong>Budgets</strong> — monthly limits per category.</li>
+      <li><strong>Preferences</strong> — currency, language, and similar settings.</li>
+    </ul>
+    <p>By default this data is stored only in a local database on your device and is not transmitted
+    to us or to any third party.</p>
 
-  <h3>2.2 Account data (only if you enable Cloud Backup)</h3>
-  <p>Cloud Backup requires you to sign in with Google (via Firebase Authentication). When you do,
-  we process the account information Google provides:</p>
-  <ul>
-    <li>Email address</li>
-    <li>Display name</li>
-    <li>Profile photo URL</li>
-    <li>A Firebase user identifier (UID)</li>
-  </ul>
+    <h3>2.2 Account data (only if you enable Cloud Backup)</h3>
+    <p>Cloud Backup requires you to sign in with Google (via Firebase Authentication). When you do,
+    we process the account information Google provides:</p>
+    <ul>
+      <li>Email address</li>
+      <li>Display name</li>
+      <li>Profile photo URL</li>
+      <li>A Firebase user identifier (UID)</li>
+    </ul>
 
-  <h3>2.3 Synced data (only if you enable Cloud Backup)</h3>
-  <p>When Cloud Backup is on, the data in Section&nbsp;2.1 (transactions, categories, and budgets) is
-  copied to <strong>Google Cloud Firestore</strong> under your account, at the path
-  <code>users/{your-id}/…</code>. Security rules restrict this data so that <strong>only your
-  signed-in account can read or write it</strong>. We, as operators, do not access the contents of
-  your synced records in the ordinary course of providing the service.</p>
+    <h3>2.3 Synced data (only if you enable Cloud Backup)</h3>
+    <p>When Cloud Backup is on, the data in Section&nbsp;2.1 (transactions, categories, and budgets) is
+    copied to <strong>Google Cloud Firestore</strong> under your account, at the path
+    <code>users/{your-id}/…</code>. Security rules restrict this data so that <strong>only your
+    signed-in account can read or write it</strong>. We, as operators, do not access the contents of
+    your synced records in the ordinary course of providing the service.</p>
 
-  <h3>2.4 What we do <em>not</em> collect</h3>
-  <ul>
-    <li>No advertising identifiers and no ads.</li>
-    <li>No third-party analytics or crash-reporting SDKs.</li>
-    <li>No microphone access. Voice entry is handled by Google Assistant; the App only receives the
-    resulting text and never records or stores audio.</li>
-    <li>No payment-card or banking-login details.</li>
-  </ul>
+    <h3>2.4 What we do <em>not</em> collect</h3>
+    <ul>
+      <li>No advertising identifiers and no ads.</li>
+      <li>No third-party analytics or crash-reporting SDKs.</li>
+      <li>No microphone access. Voice entry is handled by Google Assistant; the App only receives the
+      resulting text and never records or stores audio.</li>
+      <li>No payment-card or banking-login details.</li>
+    </ul>
 
-  <h2>3. Device permissions</h2>
-  <table>
-    <tr><th>Permission</th><th>Why it is used</th></tr>
-    <tr><td>Internet</td><td>To sync your data to the cloud when Cloud Backup is enabled.</td></tr>
-    <tr><td>Notifications</td><td>To show budget alerts and sync status.</td></tr>
-    <tr><td>Foreground service / data sync</td><td>To complete a cloud sync reliably in the background.</td></tr>
-  </table>
+    <h2>3. Device permissions</h2>
+    <table>
+      <tr><th>Permission</th><th>Why it is used</th></tr>
+      <tr><td>Internet</td><td>To sync your data to the cloud when Cloud Backup is enabled.</td></tr>
+      <tr><td>Notifications</td><td>To show budget alerts and sync status.</td></tr>
+      <tr><td>Foreground service / data sync</td><td>To complete a cloud sync reliably in the background.</td></tr>
+    </table>
 
-  <h2>4. How we use information</h2>
-  <ul>
-    <li>To provide core expense-tracking features on your device.</li>
-    <li>To authenticate you and back up / sync your data across your devices when you enable Cloud Backup.</li>
-    <li>To send budget and sync notifications you have enabled.</li>
-    <li>To respond to your support requests.</li>
-  </ul>
-  <p>We do not sell your personal information, and we do not use it for advertising or profiling.</p>
+    <h2>4. How we use information</h2>
+    <ul>
+      <li>To provide core expense-tracking features on your device.</li>
+      <li>To authenticate you and back up / sync your data across your devices when you enable Cloud Backup.</li>
+      <li>To send budget and sync notifications you have enabled.</li>
+      <li>To respond to your support requests.</li>
+    </ul>
+    <p>We do not sell your personal information, and we do not use it for advertising or profiling.</p>
 
-  <h2>5. Service providers</h2>
-  <p>When Cloud Backup is enabled, we rely on <strong>Google Firebase</strong> (Firebase
-  Authentication and Cloud Firestore), provided by Google LLC, to authenticate you and store your
-  synced data. Google processes this data on our behalf and under its own terms. See the
-  <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy
-  and Security</a> information and the
-  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+    <h2>5. Service providers</h2>
+    <p>When Cloud Backup is enabled, we rely on <strong>Google Firebase</strong> (Firebase
+    Authentication and Cloud Firestore), provided by Google LLC, to authenticate you and store your
+    synced data. Google processes this data on our behalf and under its own terms. See the
+    <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy
+    and Security</a> information and the
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
 
-  <h2>6. Data retention and deletion</h2>
-  <ul>
-    <li><strong>Local data</strong> remains on your device until you delete it in the App or uninstall the App.</li>
-    <li><strong>Synced data</strong> remains in Firestore until you delete it; deletions you make are
-    propagated to the cloud and to your other devices on the next sync.</li>
-    <li><strong>Signing out</strong> stops syncing and keeps your local data on the device.</li>
-    <li>To request deletion of your account and any associated cloud data, email
-    <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>.</li>
-  </ul>
+    <h2>6. Data retention and deletion</h2>
+    <ul>
+      <li><strong>Local data</strong> remains on your device until you delete it in the App or uninstall the App.</li>
+      <li><strong>Synced data</strong> remains in Firestore until you delete it; deletions you make are
+      propagated to the cloud and to your other devices on the next sync.</li>
+      <li><strong>Signing out</strong> stops syncing and keeps your local data on the device.</li>
+      <li>To request deletion of your account and any associated cloud data, email
+      <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>.</li>
+    </ul>
 
-  <h2>7. Your rights</h2>
-  <p>Depending on where you live (for example, under the GDPR or similar laws), you may have rights
-  to access, correct, export, or delete your personal data, and to object to or restrict certain
-  processing. You can:</p>
-  <ul>
-    <li>Access and edit your data directly in the App.</li>
-    <li>Export your transactions to a CSV file using the in-App export feature.</li>
-    <li>Delete data in the App, or request deletion by contacting us.</li>
-  </ul>
-  <p>To exercise any right, contact <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>.</p>
+    <h2>7. Your rights</h2>
+    <p>Depending on where you live (for example, under the GDPR or similar laws), you may have rights
+    to access, correct, export, or delete your personal data, and to object to or restrict certain
+    processing. You can:</p>
+    <ul>
+      <li>Access and edit your data directly in the App.</li>
+      <li>Export your transactions to a CSV file using the in-App export feature.</li>
+      <li>Delete data in the App, or request deletion by contacting us.</li>
+    </ul>
+    <p>To exercise any right, contact <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>.</p>
 
-  <h2>8. Data security</h2>
-  <p>Synced data is transmitted over encrypted connections and stored within Google's infrastructure,
-  protected by access rules that limit each record to its owner. No method of transmission or storage
-  is completely secure, but we take reasonable measures to protect your information.</p>
+    <h2>8. Data security</h2>
+    <p>Synced data is transmitted over encrypted connections and stored within Google's infrastructure,
+    protected by access rules that limit each record to its owner. No method of transmission or storage
+    is completely secure, but we take reasonable measures to protect your information.</p>
 
-  <h2>9. International transfers</h2>
-  <p>If you enable Cloud Backup, your data may be processed and stored by Google in data centers
-  located outside your country of residence. Where required, such transfers are carried out under
-  appropriate safeguards.</p>
+    <h2>9. International transfers</h2>
+    <p>If you enable Cloud Backup, your data may be processed and stored by Google in data centers
+    located outside your country of residence. Where required, such transfers are carried out under
+    appropriate safeguards.</p>
 
-  <h2>10. Children's privacy</h2>
-  <p>FastSpend is not directed to children under the age of 13 (or the minimum age required in your
-  jurisdiction), and we do not knowingly collect personal information from them.</p>
+    <h2>10. Children's privacy</h2>
+    <p>FastSpend is not directed to children under the age of 13 (or the minimum age required in your
+    jurisdiction), and we do not knowingly collect personal information from them.</p>
 
-  <h2>11. Changes to this policy</h2>
-  <p>We may update this Privacy Policy from time to time. We will revise the "Last updated" date above
-  and, where appropriate, notify you within the App. Continued use of the App after changes take
-  effect constitutes acceptance of the updated policy.</p>
+    <h2>11. Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will revise the "Last updated" date above
+    and, where appropriate, notify you within the App. Continued use of the App after changes take
+    effect constitutes acceptance of the updated policy.</p>
 
-  <h2>12. Contact</h2>
-  <p>Questions or requests regarding this policy or your data:
-  <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>.</p>
+    <h2>12. Contact</h2>
+    <p>Questions or requests regarding this policy or your data:
+    <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>.</p>
+  </main>
 
   <footer>
-    &copy; 2026 TLTek. FastSpend and the FastSpend logo are trademarks of their respective owners.
+    <div class="wrap">
+      <div class="top">
+        <div style="max-width:280px;">
+          <img src="../assets/logo/wordmark-white.svg" alt="FastSpend" />
+          <p style="margin:14px 0 0; font-size:14px;">The money tracker that respects your time. Log a spend in three seconds.</p>
+        </div>
+        <div class="cols">
+          <div>
+            <h5>Product</h5>
+            <a href="../index.html#how">How it works</a>
+            <a href="../index.html#features">Features</a>
+            <a href="../index.html#plus">FastSpend Plus</a>
+          </div>
+          <div>
+            <h5>Legal</h5>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="legal">
+        &copy; 2026 TLTek. FastSpend and the FastSpend logo are trademarks of their respective owners.
+      </div>
+    </div>
   </footer>
-</div>
+
 </body>
 </html>
