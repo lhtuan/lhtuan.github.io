@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FastSpend — Log money in 3 seconds</title>
+<meta name="description" content="FastSpend is the fastest money tracker on Android. Log a spend in three seconds with a home-screen widget, voice, or a single numpad screen. Private by default." />
+<meta property="og:title" content="FastSpend — Log money in 3 seconds" />
+<meta property="og:description" content="The fastest spend tracker on Android. Widget · Voice · One-screen entry. Private by default." />
+<meta property="og:image" content="assets/play-store/feature-graphic.svg" />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/svg+xml" href="assets/logo/monogram.svg" />
+<style>
+  :root {
+    --green-1:#13c895; --green-2:#0a8f6b;
+    --navy-1:#0f1a2e; --navy-2:#1a2542;
+    --ink:#16203a; --muted:#5b6072; --line:#e6e8ef;
+    --bg:#ffffff; --soft:#f6f8fc;
+    --radius:18px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+  .btn {
+    display:inline-block; font-weight:600; font-size:16px; padding:14px 26px;
+    border-radius:999px; transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { transform:translateY(-2px); }
+  .btn-primary { background:linear-gradient(135deg,var(--green-1),var(--green-2)); color:#fff; box-shadow:0 8px 24px rgba(19,200,149,.35); }
+  .btn-ghost { background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.22); }
+  .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; font-weight:700; color:var(--green-2); }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(12px);
+    background:rgba(15,26,46,.82); border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  nav .wrap { display:flex; align-items:center; justify-content:space-between; height:64px; }
+  nav img { height:30px; display:block; }
+  nav .links a { color:rgba(255,255,255,.85); font-size:15px; margin-left:26px; font-weight:500; }
+  nav .links a:hover { color:#fff; }
+  @media (max-width:640px){ nav .links a:not(.btn){ display:none; } }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(19,200,149,.22), transparent 60%),
+      linear-gradient(160deg,var(--navy-1),var(--navy-2));
+    color:#fff; padding:84px 0 96px; overflow:hidden;
+  }
+  .hero .grid { display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center; }
+  .hero h1 { font-size:54px; line-height:1.05; margin:18px 0 18px; letter-spacing:-.02em; }
+  .hero h1 .accent { background:linear-gradient(135deg,var(--green-1),#3ee3b4); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero p.lead { font-size:19px; color:rgba(255,255,255,.82); max-width:520px; margin:0 0 30px; }
+  .hero .cta { display:flex; gap:14px; flex-wrap:wrap; }
+  .hero .meta { margin-top:22px; font-size:14px; color:rgba(255,255,255,.6); }
+  .phone-stack { position:relative; display:flex; justify-content:center; }
+  .phone-stack img { width:240px; border-radius:26px; box-shadow:0 30px 70px rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.08); }
+  .phone-stack img:nth-child(2){ width:210px; margin-left:-70px; margin-top:36px; transform:rotate(5deg); opacity:.96; }
+  @media (max-width:860px){
+    .hero .grid { grid-template-columns:1fr; text-align:center; }
+    .hero h1 { font-size:40px; }
+    .hero p.lead { margin-left:auto; margin-right:auto; }
+    .hero .cta { justify-content:center; }
+    .phone-stack { margin-top:20px; }
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding:78px 0; }
+  .section-head { text-align:center; max-width:680px; margin:0 auto 48px; }
+  .section-head h2 { font-size:34px; letter-spacing:-.02em; margin:10px 0 12px; }
+  .section-head p { color:var(--muted); font-size:18px; margin:0; }
+
+  /* three ways */
+  .ways { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .way { background:var(--soft); border:1px solid var(--line); border-radius:var(--radius); padding:28px; }
+  .way .ic { width:46px; height:46px; border-radius:12px; display:grid; place-items:center; font-size:22px;
+    background:linear-gradient(135deg,var(--green-1),var(--green-2)); color:#fff; margin-bottom:16px; }
+  .way h3 { margin:0 0 8px; font-size:19px; }
+  .way p { margin:0; color:var(--muted); font-size:15px; }
+  @media (max-width:760px){ .ways { grid-template-columns:1fr; } }
+
+  /* screenshots */
+  .shots { background:var(--soft); }
+  .shot-row { display:flex; gap:20px; overflow-x:auto; padding:8px 4px 18px; scroll-snap-type:x mandatory; }
+  .shot-row figure { margin:0; flex:0 0 auto; scroll-snap-align:center; text-align:center; }
+  .shot-row img { width:230px; border-radius:22px; box-shadow:0 18px 44px rgba(16,32,60,.18); border:1px solid var(--line); display:block; }
+  .shot-row figcaption { margin-top:12px; font-size:14px; color:var(--muted); font-weight:500; }
+
+  /* features */
+  .features { display:grid; grid-template-columns:repeat(2,1fr); gap:18px 38px; max-width:880px; margin:0 auto; }
+  .feature { display:flex; gap:14px; }
+  .feature .dot { flex:0 0 auto; width:26px; height:26px; border-radius:8px; background:rgba(19,200,149,.14); color:var(--green-2); display:grid; place-items:center; font-weight:700; font-size:15px; }
+  .feature h4 { margin:2px 0 4px; font-size:17px; }
+  .feature p { margin:0; color:var(--muted); font-size:15px; }
+  @media (max-width:680px){ .features { grid-template-columns:1fr; } }
+
+  /* privacy band */
+  .privacy-band { background:linear-gradient(160deg,var(--navy-1),var(--navy-2)); color:#fff; text-align:center; }
+  .privacy-band h2 { font-size:34px; margin:0 0 14px; letter-spacing:-.02em; }
+  .privacy-band p { color:rgba(255,255,255,.82); font-size:18px; max-width:620px; margin:0 auto; }
+
+  /* pricing */
+  .plan { max-width:460px; margin:0 auto; background:#fff; border:1px solid var(--line); border-radius:24px; padding:36px; box-shadow:0 18px 50px rgba(16,32,60,.10); text-align:center; }
+  .plan .price { font-size:42px; font-weight:800; letter-spacing:-.02em; margin:6px 0 2px; }
+  .plan .price small { font-size:17px; font-weight:600; color:var(--muted); }
+  .plan .alt { color:var(--muted); font-size:15px; margin:0 0 22px; }
+  .plan ul { list-style:none; padding:0; margin:0 0 26px; text-align:left; }
+  .plan li { padding:9px 0 9px 30px; position:relative; font-size:16px; border-bottom:1px solid var(--line); }
+  .plan li:last-child { border-bottom:0; }
+  .plan li::before { content:"✓"; position:absolute; left:0; color:var(--green-2); font-weight:800; }
+  .plan .note { font-size:13px; color:var(--muted); margin-top:16px; }
+
+  /* footer */
+  footer { background:#0b1322; color:rgba(255,255,255,.7); padding:54px 0 40px; font-size:15px; }
+  footer .top { display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap; }
+  footer img { height:30px; }
+  footer .cols { display:flex; gap:54px; flex-wrap:wrap; }
+  footer h5 { color:#fff; font-size:14px; text-transform:uppercase; letter-spacing:.08em; margin:0 0 12px; }
+  footer a { display:block; color:rgba(255,255,255,.7); margin:7px 0; }
+  footer a:hover { color:var(--green-1); }
+  footer .legal { border-top:1px solid rgba(255,255,255,.08); margin-top:36px; padding-top:22px; font-size:13px; color:rgba(255,255,255,.5); }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a href="#top"><img src="assets/logo/wordmark-white.svg" alt="FastSpend" /></a>
+      <div class="links">
+        <a href="#how">How it works</a>
+        <a href="#screens">Screens</a>
+        <a href="#features">Features</a>
+        <a href="#plus">Plus</a>
+        <a href="#get" class="btn btn-primary" style="padding:9px 18px; font-size:14px;">Get the app</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="wrap grid">
+      <div>
+        <span class="eyebrow" style="color:#3ee3b4;">The 3-second money tracker</span>
+        <h1>Log money in <span class="accent">3&nbsp;seconds.</span><br/>No setup. No accounts.</h1>
+        <p class="lead">Every other expense app makes you tap six times to log a coffee. FastSpend does one thing — it records a spend instantly, from a widget, your voice, or a single screen.</p>
+        <div class="cta" id="get">
+          <a class="btn btn-primary" href="#get">Get it on Google Play</a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+        <p class="meta">Free forever · Private by default · Requires Android 8.0+</p>
+      </div>
+      <div class="phone-stack">
+        <img src="assets/play-store/screenshot-1-numpad.svg" alt="FastSpend numpad entry screen" />
+        <img src="assets/play-store/screenshot-4-summary.svg" alt="FastSpend monthly summary screen" />
+      </div>
+    </div>
+  </header>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Three ways to log</span>
+        <h2>All under three seconds</h2>
+        <p>Pick whichever is fastest in the moment. They all land in the same place.</p>
+      </div>
+      <div class="ways">
+        <div class="way">
+          <div class="ic">▦</div>
+          <h3>Home-screen widget</h3>
+          <p>Tap the amount, tap a recent category, saved. The app never even opens.</p>
+        </div>
+        <div class="way">
+          <div class="ic">🎙</div>
+          <h3>Voice command</h3>
+          <p>“Hey Google, log 50k coffee in FastSpend.” Done — completely hands-free.</p>
+        </div>
+        <div class="way">
+          <div class="ic">⌨</div>
+          <h3>One-screen numpad</h3>
+          <p>The app opens straight to the numpad — not a dashboard. Type and save.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="shots" id="screens">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">A look inside</span>
+        <h2>Fast to log, clear to read</h2>
+        <p>One-tap entry, a clean monthly summary, and budgets that keep you honest.</p>
+      </div>
+      <div class="shot-row">
+        <figure><img src="assets/play-store/screenshot-1-numpad.svg" alt="Numpad entry" /><figcaption>One-screen numpad</figcaption></figure>
+        <figure><img src="assets/play-store/screenshot-2-widget.svg" alt="Home-screen widget" /><figcaption>Home-screen widget</figcaption></figure>
+        <figure><img src="assets/play-store/screenshot-3-voice.svg" alt="Voice logging" /><figcaption>Voice logging</figcaption></figure>
+        <figure><img src="assets/play-store/screenshot-4-summary.svg" alt="Monthly summary" /><figcaption>Monthly summary</figcaption></figure>
+        <figure><img src="assets/play-store/screenshot-5-budgets.svg" alt="Budgets" /><figcaption>Category budgets</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What's in the app</span>
+        <h2>Everything you need, nothing you don't</h2>
+        <p>Amount plus category — that's the whole data model. The rest just makes it pleasant.</p>
+      </div>
+      <div class="features">
+        <div class="feature"><div class="dot">↻</div><div><h4>Spend &amp; income</h4><p>Track both and see your real net cashflow at a glance.</p></div></div>
+        <div class="feature"><div class="dot">◔</div><div><h4>Monthly summary</h4><p>Category breakdown with a donut chart. Swipe between months to compare.</p></div></div>
+        <div class="feature"><div class="dot">★</div><div><h4>Smart recents</h4><p>Your most-used categories are always one tap away.</p></div></div>
+        <div class="feature"><div class="dot">⤺</div><div><h4>One-tap undo</h4><p>Misclick on a save? Undo instantly, every time.</p></div></div>
+        <div class="feature"><div class="dot">◎</div><div><h4>Category budgets</h4><p>Set monthly limits and get a heads-up before you blow past them.</p></div></div>
+        <div class="feature"><div class="dot">◐</div><div><h4>Material You</h4><p>Adapts to your wallpaper colors, with themed icons on Android 13+.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section class="privacy-band">
+    <div class="wrap">
+      <span class="eyebrow" style="color:#3ee3b4;">Private by default</span>
+      <h2>Your money stays on your phone</h2>
+      <p>No account required to start. No tracking, no ads, ever. Your data lives in a local database on your device — and only leaves it if <em>you</em> turn on cloud backup.</p>
+    </div>
+  </section>
+
+  <!-- PLUS / PRICING -->
+  <section id="plus">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">FastSpend Plus — optional</span>
+        <h2>Sync across your devices</h2>
+        <p>The free tier is fully functional forever. Plus is for sync — not for unlocking features that should have been free.</p>
+      </div>
+      <div class="plan">
+        <div class="eyebrow" style="color:var(--green-2);">FastSpend Plus</div>
+        <div class="price">$1.99<small> / month</small></div>
+        <p class="alt">or $14.99 / year · 7-day free trial</p>
+        <ul>
+          <li>Real-time cloud sync, encrypted</li>
+          <li>Automatic backups</li>
+          <li>CSV export for spreadsheets</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-primary" href="#get" style="width:100%;">Start free trial</a>
+        <p class="note">Cancel anytime. Billing handled by Google Play.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="top">
+        <div style="max-width:280px;">
+          <img src="assets/logo/wordmark-white.svg" alt="FastSpend" />
+          <p style="margin:14px 0 0; font-size:14px;">The money tracker that respects your time. Log a spend in three seconds.</p>
+        </div>
+        <div class="cols">
+          <div>
+            <h5>Product</h5>
+            <a href="#how">How it works</a>
+            <a href="#features">Features</a>
+            <a href="#plus">FastSpend Plus</a>
+          </div>
+          <div>
+            <h5>Legal</h5>
+            <a href="legal/privacy-policy.html">Privacy Policy</a>
+            <a href="legal/terms-and-conditions.html">Terms &amp; Conditions</a>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="legal">
+        &copy; 2026 TLTek. FastSpend and the FastSpend logo are trademarks of their respective owners.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
