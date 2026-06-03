@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>FastSpend — Log money in 3 seconds</title>
-<meta name="description" content="FastSpend is the fastest money tracker on Android. Log a spend in three seconds with a home-screen widget, voice, or a single numpad screen. Private by default." />
+<meta name="description" content="FastSpend is the fastest money tracker on Android. Log a spend in three seconds with a home-screen widget or a single numpad screen. Private by default." />
 <meta property="og:title" content="FastSpend — Log money in 3 seconds" />
-<meta property="og:description" content="The fastest spend tracker on Android. Widget · Voice · One-screen entry. Private by default." />
-<meta property="og:image" content="assets/play-store/feature-graphic.svg" />
+<meta property="og:description" content="The fastest spend tracker on Android. Widget · One-screen entry. Private by default." />
+<meta property="og:image" content="assets/play-store/feature-graphic.png" />
 <meta property="og:type" content="website" />
 <link rel="icon" type="image/svg+xml" href="assets/logo/monogram.svg" />
 <style>
@@ -78,7 +78,7 @@
   .section-head p { color:var(--muted); font-size:18px; margin:0; }
 
   /* three ways */
-  .ways { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .ways { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; max-width:720px; margin:0 auto; }
   .way { background:var(--soft); border:1px solid var(--line); border-radius:var(--radius); padding:28px; }
   .way .ic { width:46px; height:46px; border-radius:12px; display:grid; place-items:center; font-size:22px;
     background:linear-gradient(135deg,var(--green-1),var(--green-2)); color:#fff; margin-bottom:16px; }
@@ -157,8 +157,8 @@
         <p class="meta">Free forever · Private by default · Requires Android 8.0+</p>
       </div>
       <div class="phone-stack">
-        <img src="assets/play-store/screenshot-1-numpad.svg" alt="FastSpend numpad entry screen" />
-        <img src="assets/play-store/screenshot-4-summary.svg" alt="FastSpend monthly summary screen" />
+        <img src="assets/play-store/screenshot-1-numpad.png" alt="FastSpend numpad entry screen" />
+        <img src="assets/play-store/screenshot-4-summary.png" alt="FastSpend monthly summary screen" />
       </div>
     </div>
   </header>
@@ -167,23 +167,30 @@
   <section id="how">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Three ways to log</span>
+        <span class="eyebrow">Two ways to log</span>
         <h2>All under three seconds</h2>
         <p>Pick whichever is fastest in the moment. They all land in the same place.</p>
       </div>
       <div class="ways">
         <div class="way">
-          <div class="ic">▦</div>
+          <div class="ic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+              <rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+            </svg>
+          </div>
           <h3>Home-screen widget</h3>
           <p>Tap the amount, tap a recent category, saved. The app never even opens.</p>
         </div>
         <div class="way">
-          <div class="ic">🎙</div>
-          <h3>Voice command</h3>
-          <p>“Hey Google, log 50k coffee in FastSpend.” Done — completely hands-free.</p>
-        </div>
-        <div class="way">
-          <div class="ic">⌨</div>
+          <div class="ic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <line x1="8" y1="9" x2="8" y2="9"/><line x1="12" y1="9" x2="12" y2="9"/><line x1="16" y1="9" x2="16" y2="9"/>
+              <line x1="8" y1="13" x2="8" y2="13"/><line x1="12" y1="13" x2="12" y2="13"/><line x1="16" y1="13" x2="16" y2="13"/>
+              <line x1="8" y1="17" x2="16" y2="17"/>
+            </svg>
+          </div>
           <h3>One-screen numpad</h3>
           <p>The app opens straight to the numpad — not a dashboard. Type and save.</p>
         </div>
@@ -197,14 +204,15 @@
       <div class="section-head">
         <span class="eyebrow">A look inside</span>
         <h2>Fast to log, clear to read</h2>
-        <p>One-tap entry, a clean monthly summary, and budgets that keep you honest.</p>
+        <p>One-tap entry and a clean monthly summary that keeps you honest.</p>
       </div>
       <div class="shot-row">
-        <figure><img src="assets/play-store/screenshot-1-numpad.svg" alt="Numpad entry" /><figcaption>One-screen numpad</figcaption></figure>
-        <figure><img src="assets/play-store/screenshot-2-widget.svg" alt="Home-screen widget" /><figcaption>Home-screen widget</figcaption></figure>
-        <figure><img src="assets/play-store/screenshot-3-voice.svg" alt="Voice logging" /><figcaption>Voice logging</figcaption></figure>
-        <figure><img src="assets/play-store/screenshot-4-summary.svg" alt="Monthly summary" /><figcaption>Monthly summary</figcaption></figure>
-        <figure><img src="assets/play-store/screenshot-5-budgets.svg" alt="Budgets" /><figcaption>Category budgets</figcaption></figure>
+        <figure><img src="assets/play-store/screenshot-1-numpad.png" alt="Numpad entry" /><figcaption>One-screen numpad</figcaption></figure>
+        <figure><img src="assets/play-store/screenshot-2-widget.png" alt="Home-screen widget" /><figcaption>Home-screen widget</figcaption></figure>
+        <figure><img src="assets/play-store/screenshot-4-summary.png" alt="Monthly summary" /><figcaption>Monthly summary</figcaption></figure>
+        <!-- Temporarily hidden: Category budgets
+        <figure><img src="assets/play-store/screenshot-5-budgets.png" alt="Budgets" /><figcaption>Category budgets</figcaption></figure>
+        -->
       </div>
     </div>
   </section>
@@ -222,7 +230,9 @@
         <div class="feature"><div class="dot">◔</div><div><h4>Monthly summary</h4><p>Category breakdown with a donut chart. Swipe between months to compare.</p></div></div>
         <div class="feature"><div class="dot">★</div><div><h4>Smart recents</h4><p>Your most-used categories are always one tap away.</p></div></div>
         <div class="feature"><div class="dot">⤺</div><div><h4>One-tap undo</h4><p>Misclick on a save? Undo instantly, every time.</p></div></div>
+        <!-- Temporarily hidden: Category budgets
         <div class="feature"><div class="dot">◎</div><div><h4>Category budgets</h4><p>Set monthly limits and get a heads-up before you blow past them.</p></div></div>
+        -->
         <div class="feature"><div class="dot">◐</div><div><h4>Material You</h4><p>Adapts to your wallpaper colors, with themed icons on Android 13+.</p></div></div>
       </div>
     </div>
@@ -247,16 +257,16 @@
       </div>
       <div class="plan">
         <div class="eyebrow" style="color:var(--green-2);">FastSpend Plus</div>
-        <div class="price">$1.99<small> / month</small></div>
-        <p class="alt">or $14.99 / year · 7-day free trial</p>
+        <div class="price">$0.99<small> one-time</small></div>
+        <p class="alt">Pay once, yours for life · no subscription</p>
         <ul>
           <li>Real-time cloud sync, encrypted</li>
           <li>Automatic backups</li>
           <li>CSV export for spreadsheets</li>
           <li>Priority support</li>
         </ul>
-        <a class="btn btn-primary" href="#get" style="width:100%;">Start free trial</a>
-        <p class="note">Cancel anytime. Billing handled by Google Play.</p>
+        <a class="btn btn-primary" href="#get" style="width:100%;">Get FastSpend Plus</a>
+        <p class="note">One-time purchase. Billing handled by Google Play.</p>
       </div>
     </div>
   </section>
