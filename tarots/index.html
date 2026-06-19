@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarots — AI Tarot Card Reading</title>
+  <meta name="description" content="Tarots is an AI-powered tarot reading app. Ask a question, draw your cards, and get a personal interpretation from the full 78-card Rider–Waite deck." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html"><span class="star">✦</span> Tarots</a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#screens">Screens</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <svg class="emblem" viewBox="0 0 108 108" role="img" aria-label="Tarots emblem">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FFE98A" stop-opacity="0.55"/>
+              <stop offset="45%" stop-color="#F2C94C" stop-opacity="0.28"/>
+              <stop offset="100%" stop-color="#F2C94C" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="star" cx="42%" cy="38%" r="70%">
+              <stop offset="0%" stop-color="#FFF4C2"/>
+              <stop offset="55%" stop-color="#FFE98A"/>
+              <stop offset="100%" stop-color="#F2C94C"/>
+            </radialGradient>
+          </defs>
+          <circle cx="50" cy="55" r="32" fill="url(#glow)"/>
+          <g transform="translate(50 55)">
+            <polygon points="0,-22 6,-6 22,0 6,6 0,22 -6,6 -22,0 -6,-6" fill="url(#star)"/>
+            <polygon points="0,-22 6,-6 22,0 6,6 0,22 -6,6 -22,0 -6,-6" fill="url(#star)" transform="rotate(45)" opacity="0.92"/>
+            <circle r="4.2" fill="#FFF4C2"/>
+          </g>
+          <g transform="translate(74 36)">
+            <circle r="9" fill="#FFE98A"/>
+            <circle cx="3.4" cy="-2.2" r="8" fill="#120a2a"/>
+          </g>
+          <circle cx="34" cy="34" r="1.5" fill="#FFE98A"/>
+          <circle cx="68" cy="74" r="1.7" fill="#F2C94C"/>
+        </svg>
+        <h1>Tarots</h1>
+        <p class="tagline">Ask. Reveal. Discover.</p>
+        <p class="lede">An AI-powered tarot reader in your pocket. Focus on a question, draw your cards, and receive a personal interpretation drawn from the full 78-card Rider–Waite deck.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.tltek.tarots">
+          <span class="ic" aria-hidden="true">▶</span>
+          <span>
+            <span class="gp-sub">Get it on</span><br />
+            <span class="gp-main">Google Play</span>
+          </span>
+        </a>
+        <p class="micro">For entertainment and self-reflection. Not a substitute for professional advice.</p>
+        <div class="banner reveal"><img src="assets/feature.png" alt="Tarots — three tarot cards on a mystic backdrop" width="1024" height="500" /></div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="wrap">
+        <p class="eyebrow">What's inside</p>
+        <h2>A reading made for your question</h2>
+        <p class="sub">Not a fixed dictionary entry — a fresh interpretation written around what you asked.</p>
+        <div class="features">
+          <div class="feature reveal"><div class="ic">✦</div><h3>AI interpretations</h3><p>Each card is read in its position and tied to your question, in clear, encouraging language.</p></div>
+          <div class="feature reveal"><div class="ic">☾</div><h3>Full 78-card deck</h3><p>The complete Rider–Waite deck — 22 Major and 56 Minor Arcana, upright or reversed.</p></div>
+          <div class="feature reveal"><div class="ic">✶</div><h3>3-Card &amp; Celtic Cross</h3><p>A quick three-card spread for focus, or the ten-card Celtic Cross for the full picture.</p></div>
+          <div class="feature reveal"><div class="ic">❖</div><h3>Save &amp; revisit</h3><p>Every reading is saved to your history so you can return to its guidance any time.</p></div>
+          <div class="feature reveal"><div class="ic">🌐</div><h3>Four languages</h3><p>Read in English, Tiếng Việt, Español, or Português — the whole app follows your choice.</p></div>
+          <div class="feature reveal"><div class="ic">🔒</div><h3>Private by design</h3><p>No account, no sign-up. Your readings live on your device, not in our cloud.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="wrap">
+        <p class="eyebrow">The ritual</p>
+        <h2>Three steps to a reading</h2>
+        <div class="steps">
+          <div class="step reveal"><div class="num">I</div><h3>Ask</h3><p>Type the question on your mind and choose a spread.</p></div>
+          <div class="step reveal"><div class="num">II</div><h3>Reveal</h3><p>Tap each face-down card to flip it, one by one.</p></div>
+          <div class="step reveal"><div class="num">III</div><h3>Discover</h3><p>Read a personal interpretation woven around your question.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section class="section" id="screens">
+      <div class="wrap">
+        <p class="eyebrow">Inside the app</p>
+        <h2>See it in motion</h2>
+        <p class="sub">A dark, mystical interface with hand-drawn card art and a smooth flip reveal.</p>
+      </div>
+      <div class="wrap">
+        <div class="shots">
+          <img src="assets/shot-01.png" alt="Home screen — ask your question" width="1080" height="1920" loading="lazy" />
+          <img src="assets/shot-02.png" alt="The face-down tarot deck" width="1080" height="1920" loading="lazy" />
+          <img src="assets/shot-03.png" alt="Revealing the cards one by one" width="1080" height="1920" loading="lazy" />
+          <img src="assets/shot-04.png" alt="AI-powered reading interpretation" width="1080" height="1920" loading="lazy" />
+          <img src="assets/shot-05.png" alt="Saved reading history" width="1080" height="1920" loading="lazy" />
+          <img src="assets/shot-06.png" alt="Available in four languages" width="1080" height="1920" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+      <h2>The cards are waiting.</h2>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.tltek.tarots">
+        <span class="ic" aria-hidden="true">▶</span>
+        <span><span class="gp-sub">Get it on</span><br /><span class="gp-main">Google Play</span></span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <a class="wordmark" href="index.html" style="font-size:1.1rem"><span class="star">✦</span> Tarots</a>
+        <p style="margin:10px 0 0">AI tarot readings for reflection &amp; fun.</p>
+      </div>
+      <nav class="flinks">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="mailto:tl.tek5392@gmail.com">Contact</a>
+      </nav>
+      <p class="disclaimer">Tarots is provided for entertainment and self-reflection only and is not a substitute for professional medical, legal, financial, or psychological advice. © 2026 Tarots. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Lightweight scroll reveal (respects reduced motion via CSS fallback).
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
