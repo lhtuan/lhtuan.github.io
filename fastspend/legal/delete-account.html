@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--
+  FastSpend — Account & Data Deletion
+  Public URL for the Google Play "Data deletion" requirement. Explains how a user requests
+  deletion of their account and associated data, what is deleted, what is retained, and for how long.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FastSpend — Delete Your Data</title>
+<meta name="description" content="How to delete your FastSpend account and data — in the app or by request — what gets deleted, and what is kept." />
+<link rel="icon" type="image/svg+xml" href="../assets/logo/monogram.svg" />
+<style>
+  :root {
+    --green-1:#13c895; --green-2:#0a8f6b;
+    --navy-1:#0f1a2e; --navy-2:#1a2542;
+    --ink:#16203a; --muted:#5b6072; --line:#e6e8ef;
+    --bg:#ffffff; --soft:#f6f8fc;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65; font-size:17px; -webkit-font-smoothing:antialiased;
+  }
+  a { color:var(--green-2); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+
+  /* Nav (matches landing page) */
+  nav {
+    position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(12px);
+    background:rgba(15,26,46,.82); border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  nav .wrap { display:flex; align-items:center; justify-content:space-between; height:64px; }
+  nav img { height:30px; display:block; }
+  nav .links a { color:rgba(255,255,255,.85); font-size:15px; margin-left:26px; font-weight:500; }
+  nav .links a:hover { color:#fff; text-decoration:none; }
+  .btn { display:inline-block; font-weight:600; border-radius:999px; transition:transform .15s ease; }
+  .btn:hover { transform:translateY(-2px); text-decoration:none; }
+  .btn-primary { background:linear-gradient(135deg,var(--green-1),var(--green-2)); color:#fff; }
+  @media (max-width:640px){ nav .links a:not(.btn){ display:none; } }
+
+  /* Dark page header */
+  .page-hero {
+    background:
+      radial-gradient(700px 300px at 88% -40%, rgba(19,200,149,.18), transparent 60%),
+      linear-gradient(160deg,var(--navy-1),var(--navy-2));
+    color:#fff; padding:60px 0 54px;
+  }
+  .page-hero .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; font-weight:700; color:#3ee3b4; }
+  .page-hero h1 { font-size:40px; line-height:1.1; margin:12px 0 10px; letter-spacing:-.02em; }
+  .page-hero .meta { color:rgba(255,255,255,.62); font-size:14px; margin:0; }
+  .page-hero .meta code { background:rgba(255,255,255,.10); color:#cfe9df; padding:1px 7px; border-radius:5px; font-size:13px; }
+
+  /* Document body */
+  .doc { max-width:780px; margin:0 auto; padding:54px 22px 80px; }
+  .doc h2 { font-size:23px; margin:42px 0 10px; letter-spacing:-.01em; }
+  .doc h3 { font-size:18px; margin:26px 0 6px; }
+  .doc p, .doc li { color:var(--ink); }
+  .doc .muted { color:var(--muted); font-size:14px; margin:4px 0 0; }
+  .doc ul, .doc ol { padding-left:22px; }
+  .doc li { margin:6px 0; }
+  .doc code { background:#eef1f8; padding:1px 6px; border-radius:5px; font-size:14px; }
+  table { border-collapse:collapse; width:100%; margin:16px 0; font-size:15px; }
+  th, td { border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+  th { background:var(--soft); }
+  .note { background:var(--soft); border-left:3px solid var(--green-1); padding:14px 18px; border-radius:10px; margin:20px 0; font-size:15px; }
+  .steps { counter-reset:step; list-style:none; padding-left:0; }
+  .steps li { position:relative; padding:4px 0 4px 40px; margin:10px 0; }
+  .steps li::before { counter-increment:step; content:counter(step); position:absolute; left:0; top:2px;
+    width:26px; height:26px; border-radius:50%; background:linear-gradient(135deg,var(--green-1),var(--green-2));
+    color:#fff; font-weight:700; font-size:14px; display:grid; place-items:center; }
+
+  /* Footer (matches landing page) */
+  footer { background:#0b1322; color:rgba(255,255,255,.7); padding:50px 0 38px; font-size:15px; }
+  footer .top { display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap; }
+  footer img { height:30px; }
+  footer .cols { display:flex; gap:54px; flex-wrap:wrap; }
+  footer h5 { color:#fff; font-size:14px; text-transform:uppercase; letter-spacing:.08em; margin:0 0 12px; }
+  footer a { display:block; color:rgba(255,255,255,.7); margin:7px 0; }
+  footer a:hover { color:var(--green-1); text-decoration:none; }
+  footer .legal { border-top:1px solid rgba(255,255,255,.08); margin-top:36px; padding-top:22px; font-size:13px; color:rgba(255,255,255,.5); }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a href="../index.html"><img src="../assets/logo/wordmark-white.svg" alt="FastSpend" /></a>
+      <div class="links">
+        <a href="../index.html#features">Features</a>
+        <a href="../index.html#premium">Premium</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="https://play.google.com/store/apps/details?id=com.tltek.fastspend" target="_blank" rel="noopener" class="btn btn-primary" style="padding:9px 18px; font-size:14px;">Get the app</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Your data</span>
+      <h1>Delete your data</h1>
+      <p class="meta">FastSpend (<code>com.tltek.fastspend</code>) &middot; Last updated 13 July 2026</p>
+    </div>
+  </header>
+
+  <main class="doc">
+    <p>This page explains how to request deletion of your <strong>FastSpend</strong> account and the
+    data associated with it, what gets deleted, and what we keep. FastSpend is designed to be
+    local-first: unless you sign in and turn on Cloud Backup, your data never leaves your device (see
+    our <a href="privacy-policy.html">Privacy Policy</a>).</p>
+
+    <div class="note">
+      <strong>In short.</strong> If you signed in, the fastest way to delete everything from the cloud is
+      <strong>in the app: Settings → Cloud Backup → Delete account</strong>. This permanently removes your
+      account and all synced data. Prefer not to use the app? Email
+      <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a> and we'll delete it for you.
+    </div>
+
+    <h2>Option 1 — Delete in the app (fastest)</h2>
+    <p>You need to be signed in to delete your account. In the FastSpend app:</p>
+    <ol class="steps">
+      <li>Open <strong>Settings</strong>.</li>
+      <li>Go to the <strong>Cloud Backup</strong> section.</li>
+      <li>Tap <strong>Delete account</strong>.</li>
+      <li>Read the confirmation, then tap <strong>Delete</strong>.</li>
+    </ol>
+    <p>Your account and all of its cloud data are deleted immediately, and you are signed out.</p>
+
+    <h2>Option 2 — Request deletion by email</h2>
+    <p>If you can't access the app (for example, you've uninstalled it), email
+    <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a> from the email address you used to
+    sign in, with the subject <strong>"Delete my account"</strong>. We may ask you to confirm ownership
+    of the account before we proceed. We will complete the deletion within <strong>30 days</strong> of
+    verifying your request, and usually much sooner.</p>
+
+    <h2>What gets deleted</h2>
+    <p>Deleting your account permanently removes, from our cloud systems:</p>
+    <ul>
+      <li>Your sign-in account (Firebase Authentication user, including email and display name).</li>
+      <li>Your synced <strong>transactions, categories, budgets, and wallets</strong>.</li>
+      <li>Your saved <strong>AI Assistant advice</strong>.</li>
+      <li>Your synced <strong>preferences</strong> (such as currency and language).</li>
+      <li>Your <strong>Premium (Lifetime Sync) entitlement</strong> and any <strong>remaining AI
+      credits</strong>. These are account-bound and are <strong>forfeited</strong> — deleting your account
+      does not refund a purchase, and you would need to buy again to restore them.</li>
+    </ul>
+
+    <h2>What we keep, and why</h2>
+    <ul>
+      <li><strong>Purchase records</strong> — we retain a record of purchases (with your account
+      identifier removed, i.e. anonymized) for fraud prevention and to stop a purchase from being
+      redeemed twice. This retained record no longer identifies you.</li>
+      <li><strong>Data on your device</strong> — deleting your account does <em>not</em> erase the copy
+      of your data stored locally on your phone (this is intentional, so you can keep using FastSpend
+      offline). See the next section to remove it.</li>
+      <li><strong>App-store transaction history</strong> — your purchase history is held by Google Play,
+      not by us. Manage or request a refund for purchases through Google Play.</li>
+    </ul>
+
+    <h2>Removing the data on your device</h2>
+    <p>On-device data is stored only in a local database on your phone. To remove it, either
+    <strong>uninstall FastSpend</strong>, or go to <strong>Android Settings → Apps → FastSpend →
+    Storage → Clear storage</strong>. This deletes the local database and cannot be undone.</p>
+
+    <h2>Timing and retention</h2>
+    <ul>
+      <li><strong>In-app deletion</strong> takes effect immediately.</li>
+      <li><strong>Email requests</strong> are completed within 30 days of verification.</li>
+      <li>Deleted cloud data is removed from our active systems right away; any residual copies in routine
+      backups are purged in the ordinary course of our backup rotation.</li>
+      <li>Anonymized purchase records (described above) are retained indefinitely for fraud prevention.</li>
+    </ul>
+
+    <h2>Questions</h2>
+    <p>For any question about deleting your data, contact
+    <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>. For more on how we handle data, see our
+    <a href="privacy-policy.html">Privacy Policy</a>.</p>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="top">
+        <div style="max-width:280px;">
+          <img src="../assets/logo/wordmark-white.svg" alt="FastSpend" />
+          <p style="margin:14px 0 0; font-size:14px;">The money tracker that respects your time. Log a spend in three seconds.</p>
+        </div>
+        <div class="cols">
+          <div>
+            <h5>Product</h5>
+            <a href="../index.html#how">How it works</a>
+            <a href="../index.html#features">Features</a>
+            <a href="../index.html#premium">FastSpend Premium</a>
+          </div>
+          <div>
+            <h5>Legal</h5>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+            <a href="delete-account.html">Delete your data</a>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="legal">
+        &copy; 2026 TLTek. FastSpend and the FastSpend logo are trademarks of their respective owners.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
