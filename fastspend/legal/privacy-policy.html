@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<!--
-  FastSpend — Privacy Policy
-  NOTE: This is a starting template generated from the app's actual data behaviour.
-  Review with legal counsel and fill in every [BRACKETED] placeholder before publishing.
--->
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>FastSpend — Privacy Policy</title>
-<meta name="description" content="How FastSpend handles your data. Local-first by default, no ads, no analytics, optional encrypted cloud backup." />
+<meta name="description" content="How FastSpend handles your data. Local-first by default, no ads, optional cloud backup and AI insights." />
 <link rel="icon" type="image/svg+xml" href="../assets/logo/monogram.svg" />
 <style>
   :root {
@@ -98,7 +93,7 @@
     <div class="wrap">
       <span class="eyebrow">Legal</span>
       <h1>Privacy Policy</h1>
-      <p class="meta">FastSpend (<code>com.tltek.fastspend</code>) &middot; Last updated 3 June 2026 &middot; Effective 2 June 2026</p>
+      <p class="meta">FastSpend (<code>com.tltek.fastspend</code>) &middot; Last updated 13 July 2026 &middot; Effective 13 July 2026</p>
     </div>
   </header>
 
@@ -110,10 +105,13 @@
     involve sending data to cloud services.</p>
 
     <div class="note">
-      <strong>Summary.</strong> Your expenses, categories, and budgets are stored on your device.
-      We do not run advertising and do not use analytics or crash-reporting SDKs. If you choose to
-      enable the optional Cloud Backup feature, your data is synced to your private Google&nbsp;Firebase
-      account and is accessible only to you.
+      <strong>Summary.</strong> Your expenses, categories, and budgets are stored on your device and
+      work fully offline. We do not run advertising. If you choose to sign in, optional features send
+      data to cloud services: <strong>Cloud Backup</strong> syncs your data to your private
+      Google&nbsp;Firebase account (readable only by you), and the optional <strong>AI Assistant</strong>
+      sends an aggregated summary of a month's spending to our AI provider to generate insights. We use
+      Firebase Analytics and Crashlytics to understand usage and diagnose crashes. We never sell your
+      data.
     </div>
 
     <h2>1. Who we are</h2>
@@ -133,9 +131,10 @@
     <p>By default this data is stored only in a local database on your device and is not transmitted
     to us or to any third party.</p>
 
-    <h3>2.2 Account data (only if you enable Cloud Backup)</h3>
-    <p>Cloud Backup requires you to sign in with Google (via Firebase Authentication). When you do,
-    we process the account information Google provides:</p>
+    <h3>2.2 Account data (only if you sign in)</h3>
+    <p>Signing in with Google (via Firebase Authentication) is optional and is required only to use
+    Cloud Backup (Section&nbsp;2.3) or the AI Assistant (Section&nbsp;2.4). When you sign in, we process
+    the account information Google provides:</p>
     <ul>
       <li>Email address</li>
       <li>Display name</li>
@@ -150,12 +149,42 @@
     signed-in account can read or write it</strong>. We, as operators, do not access the contents of
     your synced records in the ordinary course of providing the service.</p>
 
-    <h3>2.4 What we do <em>not</em> collect</h3>
+    <h3>2.4 AI Assistant (only if you use it)</h3>
+    <p>The AI Assistant is an optional feature that generates budgeting insights for a selected month.
+    When you tap Generate, the App sends an <strong>aggregated, summarized</strong> snapshot of that
+    month's spending to our backend, which forwards it to our AI provider (<strong>OpenAI</strong>) to
+    produce the advice text. The snapshot contains only:</p>
     <ul>
-      <li>No advertising identifiers and no ads.</li>
-      <li>No third-party analytics or crash-reporting SDKs.</li>
-      <li>No microphone access and no audio recording.</li>
+      <li>The month, currency, and app language.</li>
+      <li>Total spend, total income, and net for the month.</li>
+      <li>Category names and their totals, and (where set) per-category budget limits.</li>
+      <li>Month-over-month spend comparison and simple pace/projection figures.</li>
+    </ul>
+    <p>We do <strong>not</strong> send your individual transactions, notes, account details, or any
+    directly identifying information to the AI provider. The generated advice is stored on your device
+    and, if Cloud Backup is on, synced under your account. OpenAI processes the request to return a
+    result and, under its API terms, does not use API-submitted data to train its models.</p>
+
+    <h3>2.5 Purchases</h3>
+    <p>FastSpend offers optional in-app purchases (a one-time Premium unlock and consumable AI credit
+    packs) processed by <strong>Google Play Billing</strong>. Google handles the payment; we do not
+    receive your payment-card details. We process a record of your entitlement and remaining AI credit
+    balance so we can unlock the features you bought.</p>
+
+    <h3>2.6 Analytics and crash diagnostics</h3>
+    <p>We use <strong>Firebase Analytics</strong> to understand aggregate, non-identifying feature usage
+    and <strong>Firebase Crashlytics</strong> to receive crash and diagnostic reports so we can fix
+    bugs. These may include device and app information (for example device model, OS version, app
+    version) and, for crashes, technical logs. We also use <strong>Firebase App Check</strong> to
+    protect our backend from abuse. This data is used to operate and improve the App, not for
+    advertising.</p>
+
+    <h3>2.7 What we do <em>not</em> collect</h3>
+    <ul>
+      <li>No advertising and no use of your data for advertising or profiling.</li>
       <li>No payment-card or banking-login details.</li>
+      <li>No access to your bank accounts, SMS messages, or receipts.</li>
+      <li>Your individual transactions and notes are never sent to the AI provider.</li>
     </ul>
 
     <h2>3. Device permissions</h2>
@@ -170,24 +199,39 @@
     <ul>
       <li>To provide core expense-tracking features on your device.</li>
       <li>To authenticate you and back up / sync your data across your devices when you enable Cloud Backup.</li>
+      <li>To generate spending insights when you use the AI Assistant.</li>
+      <li>To unlock and manage in-app purchases (Premium and AI credits).</li>
+      <li>To understand aggregate usage and diagnose crashes, and to protect our backend from abuse.</li>
       <li>To send budget and sync notifications you have enabled.</li>
       <li>To respond to your support requests.</li>
     </ul>
     <p>We do not sell your personal information, and we do not use it for advertising or profiling.</p>
 
     <h2>5. Service providers</h2>
-    <p>When Cloud Backup is enabled, we rely on <strong>Google Firebase</strong> (Firebase
-    Authentication and Cloud Firestore), provided by Google LLC, to authenticate you and store your
-    synced data. Google processes this data on our behalf and under its own terms. See the
-    <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy
-    and Security</a> information and the
-    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+    <p>We rely on the following providers, each of which processes data on our behalf and under its own
+    terms:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> (Google LLC) — Authentication, Cloud Firestore (synced data),
+      Analytics, Crashlytics, App Check, and Cloud Functions (which host the AI Assistant backend). See
+      the <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase
+      Privacy and Security</a> information and the
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+      <li><strong>Google Play Billing</strong> (Google LLC) — processes in-app purchases.</li>
+      <li><strong>OpenAI</strong> (OpenAI, L.L.C.) — receives the aggregated monthly spending summary
+      described in Section&nbsp;2.4 to generate AI Assistant insights. See the
+      <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI Privacy
+      Policy</a>.</li>
+    </ul>
 
     <h2>6. Data retention and deletion</h2>
     <ul>
       <li><strong>Local data</strong> remains on your device until you delete it in the App or uninstall the App.</li>
       <li><strong>Synced data</strong> remains in Firestore until you delete it; deletions you make are
       propagated to the cloud and to your other devices on the next sync.</li>
+      <li><strong>AI advice</strong> that you generate is stored like your other data (on your device, and
+      synced when Cloud Backup is on) and is removed when you delete your data or account.</li>
+      <li><strong>Delete your account</strong> from within the App to erase your account and its associated
+      cloud data (including synced records and AI advice). You can also request deletion by email.</li>
       <li><strong>Signing out</strong> stops syncing and keeps your local data on the device.</li>
       <li>To request deletion of your account and any associated cloud data, email
       <a href="mailto:tl.tek5392@gmail.com">tl.tek5392@gmail.com</a>.</li>
